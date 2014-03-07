@@ -1,9 +1,9 @@
-spray
+Spray Speed-Reader
 =====
 
 An open-source speed-reading application written in Javascript
 
-# Spray
+# About
 
 Spray is an open-source speed-reading application written in Javascript. It was inspired by [OpenSpritz](https://raw.github.com/Miserlou/OpenSpritz/) and currently contains the algorithm from that project, as well as the same styles.
 
