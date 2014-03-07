@@ -9,7 +9,8 @@ Spray is an open-source speed-reading application written in Javascript. It was 
 
 ## Installation
 
-Coming soon...
+1) Copy all files to some directory on your webserver.
+2) Enjoy speed-reading.
 
 ## Features
 
@@ -17,7 +18,7 @@ Coming soon...
 
 ## Contributing
 
-Coming soon...
+Please contribute bug reports, feature requests, etc.
 
 ### Contributors
 
