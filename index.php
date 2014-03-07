@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Open-source speed-reading tool, written in JavaScript">
+    <meta name="author" content="Chaim Peck">
+    <link rel="shortcut icon" href="favicon.png">
+
+    <title>Spray</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/site-style.css" rel="stylesheet">
+    
+    <!-- Spray -->
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+    <link href="css/spray-style.css" rel="stylesheet"> 
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">      
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Spray Reader</a>
+        </div>
+      </div>
+    </div>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Spray Reader</h1>
+        <p>Paste any text and have it "sprayed" back for faster reading ability.</p>
+        <p>I found a project on github (<a href="https://github.com/Miserlou/OpenSpritz" target="_new">here</a>) after reading about a commercial product that bears the same name (<a href="http://www.spritzinc.com/" target="_new">here</a>) and wanted to try it out. I decided to make a clean-looking implementation and to clean some of the original code to make it more versatile. I am using the algorithm from the project on github and otherwise wrote the rest. I hope this is a useful tool for anyone who happens to find it.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="spray_container">
+        <div id="guide_top">
+――――――――――<span id="notch">&#1092;</span>―――――――――――
+        </div>
+        <div id="spray_result"></div>
+        <div id="guide_bottom">
+――――――――――――――――――――――
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <form class="form-horizontal">
+        <fieldset>
+
+        <!-- Form Name -->
+        <legend>Spray Some Text!</legend>
+        
+        <!-- Textarea -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="input-text">Paste Some Text</label>
+          <div class="col-md-6">                     
+            <textarea class="form-control" id="input-text" name="input-text"></textarea>
+          </div>
+        </div>
+        
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="wpm">Set the Words-Per-Minute</label>
+          <div class="col-md-4">
+            <select id="wpm" name="wpm" class="form-control">
+              <option value="100">100 wpm</option>
+              <option value="200">200 wpm</option>
+              <option value="300">300 wpm</option>
+              <option value="400">400 wpm</option>
+              <option value="500">500 wpm</option>
+            </select>
+          </div>
+        </div>
+
+        
+        <!-- Button (Double) -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="start">And...</label>
+          <div class="col-md-8">
+            <button id="start" name="start" class="btn btn-success">Start</button>
+            <button id="stop" name="stop" class="btn btn-danger">Stop</button>
+          </div>
+        </div>
+
+        </fieldset>
+      </form>
+    </div>
+    <div id="results" class="container"></div>
+    <div class="container">
+      <hr>
+
+      <footer>
+        <p>&copy; Chaim Peck 2014 - More information about OpenSpritz here: <a href="https://github.com/Miserlou/OpenSpritz" target="_new">https://github.com/Miserlou/OpenSpritz</a></p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/spray-reader.js"></script>
+    <script type="text/javascript">
+        var sprayReader = new SprayReader('#spray_result');
+    
+        $(document).ready(function() {
+          $('#start').click(function(event) {
+            var inputText = $('#input-text').val();
+            var wpm = $('#wpm').val();
+            
+            sprayReader.setInput(inputText);
+            sprayReader.setWpm(wpm);
+            sprayReader.start();
+            
+            event.preventDefault();
+          });
+          
+          $('#stop').click(function(event) {
+            sprayReader.stop();
+            
+            event.preventDefault();
+          });
+        });
+    </script>
+  </body>
+</html>
