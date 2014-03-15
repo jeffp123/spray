@@ -11,13 +11,11 @@ Spray is an open-source speed-reading application written in Javascript. It was 
 
 The demo is hosted by the project's [GitHub Pages](http://the-happy-hippo.github.io/spray).
 
-To view the demo, click on the following link:
-
-http://the-happy-hippo.github.io/spray/content/index.html
+To view the demo, click on the following link: http://the-happy-hippo.github.io/spray/content
 
 ## Installation
 
-1. Copy all files to some directory on your webserver.
+1. Copy all files in `content/` to some directory on your webserver.
 2. Enjoy speed-reading.
 
 ## Features
