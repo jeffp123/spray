@@ -54,12 +54,6 @@
     padding-top: 12px;
 }
 
-@media only screen and (max-device-width: 480px){
-    #spray_result, #guide_top, #guide_bottom, #notch, #spray_start, #spray_pivot, #spray_end{
-        font-size:14px;
-    }
-}
-
 #spray_credits{
     float: right;
     font-family: 'Droid Sans Mono', sans-serif;
@@ -81,25 +75,6 @@
     color: #ffffff;
 }
 
-.start{
-    color: #333333;
-    text-align: center;
-    font-size: 32px;
-    font-family: 'Droid Sans Mono', sans-serif;
-}
-.pivot{
-    color: #DE0000;
-    text-align: center;
-    font-size: 32px;
-    font-family: 'Droid Sans Mono', sans-serif;
-}
-.end{
-    color: #333333;
-    text-align: center;
-    font-size: 32px;
-    font-family: 'Droid Sans Mono', sans-serif;
-}
-
 .spray_start{
     color: #333333;
     text-align: center;
@@ -118,3 +93,13 @@
     font-size: 32px;
     font-family: 'Droid Sans Mono', sans-serif;
 }
+
+@media only screen and (max-device-width: 480px){
+    #spray_result, #guide_top, #guide_bottom, #notch, #spray_start, #spray_pivot, #spray_end{
+        font-size:14px;
+    }
+    .spray_start, .spray_pivot, .spray_end{
+        font-size:14px;
+    }
+}
+
