@@ -26,7 +26,7 @@ SprayReader.prototype = {
     for (var i=0; i<allWords.length; i++){
 
       if(allWords[i].indexOf('.') != -1){
-        tmpWords[t] = allWords[i].replace('.', '&#8226;');
+        tmpWords[t] = allWords[i].replace('.', '•');
       }
 
       // Double up on long words and words with commas.

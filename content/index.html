@@ -11,11 +11,11 @@
     <title>Spray</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
     <!-- Custom styles for this template -->
     <link href="css/site-style.css" rel="stylesheet">
-    
+
     <!-- Spray -->
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
     <link href="css/spray-style.css" rel="stylesheet"> 
@@ -53,11 +53,11 @@
     <div class="container">
       <div id="spray_container">
         <div id="guide_top">
-――――――――――<span id="notch">&#1092;</span>―――――――――――
+            ――――――――――<span id="notch">&#1092;</span>―――――――――――
         </div>
-        <div id="spray_result"></div>
+        <div id="spray_result">&nbsp;</div>
         <div id="guide_bottom">
-――――――――――――――――――――――
+            ――――――――――――――――――――――
         </div>
       </div>
     </div>
@@ -67,16 +67,16 @@
         <fieldset>
 
         <!-- Form Name -->
-        <legend>Spray Some Text!</legend>
-        
+        <legend>&nbsp;</legend>
+
         <!-- Textarea -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="input-text">Paste Some Text</label>
-          <div class="col-md-6">                     
+          <div class="col-md-6">
             <textarea class="form-control" id="input-text" name="input-text"></textarea>
           </div>
         </div>
-        
+
         <!-- Select Basic -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="wpm">Set the Words-Per-Minute</label>
@@ -91,7 +91,6 @@
           </div>
         </div>
 
-        
         <!-- Button (Double) -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="start">And...</label>
@@ -118,26 +117,26 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/spray-reader.js"></script>
     <script type="text/javascript">
         var sprayReader = new SprayReader('#spray_result');
-    
+
         $(document).ready(function() {
           $('#start').click(function(event) {
             var inputText = $('#input-text').val();
             var wpm = $('#wpm').val();
-            
+
             sprayReader.setInput(inputText);
             sprayReader.setWpm(wpm);
             sprayReader.start();
-            
+
             event.preventDefault();
           });
-          
+
           $('#stop').click(function(event) {
             sprayReader.stop();
-            
+
             event.preventDefault();
           });
         });
