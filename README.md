@@ -18,9 +18,9 @@ To view the demo, click on the following link: http://the-happy-hippo.github.io/
 1. Copy all files in `content/` to some directory on your webserver.
 2. Enjoy speed-reading.
 
-## Features
+## Acknowledgements
 
-Coming soon...
+Please check out [Sprits-It](http://the-happy-hippo.github.io/sprits-it/). You can find on github, [here](https://github.com/the-happy-hippo/sprits-it)
 
 ## Contributing
 
