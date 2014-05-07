@@ -153,5 +153,5 @@ function pivot(word){
 // Let strings repeat themselves,
 // because JavaScript isn't as awesome as Python.
 String.prototype.repeat = function( num ){
-    return new Array( num + 1 ).join( this );
+    return (num<=0) ? "" : new Array( num + 1 ).join( this );
 }
