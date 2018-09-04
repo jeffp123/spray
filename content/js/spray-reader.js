@@ -129,8 +129,12 @@ function pivot(word){
 
     else{
 
+        word = '.......' + word;
+        
         var tail = 22 - (word.length + 7);
-        word = '.......' + word + ('.'.repeat(tail));
+        if(tail > 0) {
+          word + ('.'.repeat(tail));
+        }
 
         var start = word.slice(0, word.length/2);
         var end = word.slice(word.length/2, word.length);
