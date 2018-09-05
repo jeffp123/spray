@@ -2,6 +2,7 @@ var SprayReader = function(container){
   this.container = $(container);
 };
 SprayReader.prototype = {
+  afterDoneCallback: null,
   wpm: null,
   msPerWord: null,
   wordIdx: null,
@@ -86,6 +87,9 @@ SprayReader.prototype = {
     if (thisObj.wordIdx >= thisObj.words.length) {
       this.wordIdx = 0;
       this.stop();
+      if(typeof(this.afterDoneCallback) === 'function') {
+        this.afterDoneCallback();
+      }
     }
   }
 };
