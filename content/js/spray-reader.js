@@ -10,16 +10,16 @@ SprayReader.prototype = {
   words: null,
   isRunning: false,
   timers: [],
-  
+
   setInput: function(input) {
     this.input = input;
-    
+
     // Split on spaces
     var allWords = input.split(/\s+/);
-    
+
     var word = '';
     var result = '';
-    
+
     // Preprocess words
     var tmpWords = allWords.slice(0); // copy Array
     var t = 0;
@@ -54,35 +54,35 @@ SprayReader.prototype = {
     this.words = tmpWords.slice(0);
     this.wordIdx = 0;
   },
-  
+
   setWpm: function(wpm) {
     this.wpm = parseInt(wpm, 10);
     this.msPerWord = 60000/wpm;
   },
-  
+
   start: function() {
     this.isRunning = true;
-    
+
     thisObj = this;
-    
+
     this.timers.push(setInterval(function() {
       thisObj.displayWordAndIncrement();
     }, this.msPerWord));
   },
-  
+
   stop: function() {
     this.isRunning = false;
-    
+
     for(var i = 0; i < this.timers.length; i++) {
       clearTimeout(this.timers[i]);
     }
   },
-  
+
   displayWordAndIncrement: function() {
     var pivotedWord = pivot(this.words[this.wordIdx]);
-  
+
     this.container.html(pivotedWord);
-    
+
     this.wordIdx++;
     if (thisObj.wordIdx >= thisObj.words.length) {
       this.wordIdx = 0;
@@ -161,5 +161,5 @@ function pivot(word){
 // Let strings repeat themselves,
 // because JavaScript isn't as awesome as Python.
 String.prototype.repeat = function( num ){
-    return new Array( num + 1 ).join( this );
+    return (num<=0) ? "" : new Array( num + 1 ).join( this );
 }
